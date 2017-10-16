@@ -17,7 +17,7 @@ app.get('/api/days/:day', (request, response) => {
   }
   !daysOfWeek[day] ?
   response.status(400).send(`response: '${day}' is not a valid day!`) :
-  response.status(200).send(`response: ${daysOfWeek[day]}`)
+  response.status(200).set('Content-Type', 'text/plain').send(`response: ${daysOfWeek[day]}`)
 })
 
 app.post('/api/array/concat', (request, response) => {
