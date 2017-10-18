@@ -22,13 +22,11 @@ app.get('/api/days/:day', (request, response) => {
 
 app.post('/api/array/concat', (request, response) => {
   const {array1, array2} = request.body
-  //object deconstruction es6
-  // const array1 = request.body.array1
-  // const array2 = request.body.array2
-  !Array.isArray(array1 || array2) ? response.status(400).json({'error': 'Input data should be of type Array.'}) : result = array1.reduce((acc, value, index) => {
+  !Array.isArray(array1 || array2) ? response.status(400).json({'error': 'Input data should be of type Array.'}) :
+  result = array1.reduce((acc, value, index) => {
     return acc.concat(value, array2[index])
   }, [])
-  response.status(200).json({result}) //destructuring from {"result": result}
+  response.status(200).json({result})
 })
 
 
