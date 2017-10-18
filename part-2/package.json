@@ -2,11 +2,22 @@
   "name": "part-2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "database.js",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "pg-promise": "^7.0.2",
+    "postgresql": "0.0.1"
   },
-  "keywords": [],
+  "devDependencies": {},
+  "scripts": {
+    "db:init": "dropdb grocery_store; createdb grocery_store; psql grocery_store < ./schema.sql; psql grocery_store < ./load-data.sql",
+    "seedData": "psql grocery_store < ./load-data.sql",
+    "createdb": "createdb grocery_store",
+    "dropdb": "dropdb grocery_store",
+    "createtables": "psql grocery_store < ./schema.sql",
+    "test": "mocha ./database_tests.js"
+  },
   "author": "",
   "license": "ISC"
 }
