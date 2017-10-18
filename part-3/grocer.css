@@ -144,6 +144,10 @@ body {
   padding: 1%;
 }
 
+.modal-header {
+  font-size: 28px;
+}
+
 .close-btn {
   cursor: pointer;
 }
