@@ -140,12 +140,9 @@ body {
 
 .modal-header {
   display: flex;
+  font-size: 28px;
   justify-content: space-between;
   padding: 1%;
-}
-
-.modal-header {
-  font-size: 28px;
 }
 
 .close-btn {

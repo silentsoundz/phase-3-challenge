@@ -1,13 +1,6 @@
 const pgp = require('pg-promise')();
 
-const connectionString = {
-    host: 'localhost', // 'localhost' is the default;
-    port: 5432, // 5432 is the default;
-    database: 'grocery_store',
-    user: `${process.env.USER}`
-};
-
-// const connectionString = `postgres://${process.env.USER}@localhost:5432/grocery_store`
+const connectionString = `postgres://${process.env.USER}@localhost:5432/grocery_store`
 
 const db = pgp(connectionString)
 
